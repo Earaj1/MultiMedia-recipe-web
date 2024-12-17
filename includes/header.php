@@ -27,11 +27,15 @@
 
                         </li>
 
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="index.php?p=login">Login / Register</a>
-
-                        </li>
+                        <?php if (isset($_SESSION['is_loggedin'])) { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php?p=logout">Logout</a>
+                            </li>
+                        <?php } else { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.php?p=login">Login / Register</a>
+                            </li>
+                        <?php } ?>
 
                     </ul>
 

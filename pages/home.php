@@ -12,7 +12,7 @@
 
 </head>
 
-<body id ="page-home">
+<body id="page-home">
     <div class="container">
         <h1 class="pb-2">Welcome to StudentEat</h1>
         <div class="row">
