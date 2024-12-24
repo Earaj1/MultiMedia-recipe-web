@@ -1,7 +1,7 @@
 <body id="page-<?php echo $page; ?>">
     <header>
         <div class="page-header-top container text-center text-md-start">
-            <a href="index.html"><img src="./images/logo.jpg" alt="StudentEat" /></a>
+            <a href="index.php?p=home"><img src="./images/logo.jpg" alt="StudentEat" /></a>
         </div>
         <nav class="navbar navbar-expand-lg mb-4">
             <div class="container">
@@ -27,6 +27,18 @@
 
                         </li>
 
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="index.php?p=account">My Account</a>
+                        
+                        </li>
+
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="index.php?p=weather">Weather</a>
+                        
+                        </li>
+
                         <?php if (isset($_SESSION['is_loggedin'])) { ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?p=logout">Logout</a>
@@ -39,9 +51,9 @@
 
                     </ul>
 
-                    <form action="search.html" method="get" class="d-flex">
+                    <form action="index.php?p=search" method="post" class="d-flex">
 
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
 
                         <button class="btn btn-outline-dark ms-2" type="submit">Search</button>
 

@@ -31,4 +31,23 @@ class User
             return false;
         }
     }
+
+    public function updateUserProfile($file_name)
+    {
+        $query = "UPDATE users SET user_image = :user_image WHERE user_id = :user_id";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(
+            'user_image' => $file_name,
+            'user_id' => $_SESSION['user_data']['user_id']
+        ));
+        return true;
+    }
+
+    public function getUser()
+    {
+        $query = "SELECT * FROM users WHERE user_id = :user_id";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(':user_id' => $_SESSION['user_data']['user_id']));
+        return $stmt->fetch();
+    }
 }

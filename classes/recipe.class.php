@@ -35,4 +35,14 @@ class Recipe
         $recipe_data['images'] = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $recipe_data;
     }
+
+    public function searchRecipes($query_string)
+    {
+        $query = "SELECT * FROM recipes WHERE recipe_name LIKE :query_string";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute([
+            "query_string" => "%" . $query_string . "%"
+        ]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

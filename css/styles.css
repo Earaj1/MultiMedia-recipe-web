@@ -10299,6 +10299,11 @@ h1, .h1 {
   font-size: 2.2rem;
   border-bottom: solid 2px #66d891; }
 
+h2, .h2 {
+  color: #FFF;
+  font-weight: 100;
+  font-size: 2rem; }
+
 p {
   color: #FFF;
   font-weight: 300;
